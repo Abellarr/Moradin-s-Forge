@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&family=Edu+NSW+ACT+Foundation&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: flexbox;
+  height: 250px;
+  background-image: url('./assets/Header Background 2.png');
+  background-color: rgb(0,0,0,.2);
+  background-blend-mode: multiply;
+  background-size: cover;
+  text-align: center;
+  padding-top: 1.5em;
+  position: sticky;
+}
+
+.headerTitle {
+  font-family: Alkatra;
+  font-size: 150px;
+  color: rgb(81, 47, 144);
+  text-shadow: 6px 6px 4px rgba(0, 0, 0, 0.75);
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.nav-bar li {
+  font-family: Edu NSW ACT Foundation;
+  font-size: x-large;
+  display: inline;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 0px black;
+}
+
+.nav-bar li:hover {
+  color: rgb(149, 104, 231);
+  background-color: rgba(31, 109, 218, 0.3);
+  cursor: pointer;
+}
+
+.main-container {
+  height: 1000px;
+  width: 100%;
+  background-color: rgb(63, 53, 133);
+}
+
+.inner-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-display {
+  width: 25%;
+  height: 30%;
+  background-color: darkslategray;
+  color: white;
+}
