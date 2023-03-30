@@ -8,12 +8,23 @@ function App() {
   let weaps = fetch('https://api.open5e.com/weapons/').then(response => response.json());
   let arm = fetch('https://api.open5e.com/armor/').then(response => response.json());
   let magItems = fetch('https://api.open5e.com/magicitems/').then(response => response.json());
-  const [count, setCount] = useState(0)
+  const [display, setDisplay] = useState("");
+  const [weapons, setWeapons] = useState(weaps);
+  const [armor, setArmor] = useState(arm);
+  const [magicItems, setMagItems] = useState(magItems);
 
   return (
     <div className="App">
-      <Header />
-      <Container />
+      <Header
+        display={display}
+        setDisplay={setDisplay}
+      />
+      <Container 
+        display={display}
+        weapons={weapons}
+        armor={armor}
+        magicItems={magicItems} 
+      />
     </div>
   )
 }

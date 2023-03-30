@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Container() {
+function Container(props) {
 
     return (
         <div className='main-container'>
             <div className='inner-container'>
-                
+
             </div>
         </div>
     )
