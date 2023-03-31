@@ -11,6 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
+connectDB.js
+docker-compose.yaml
+Dockerfile
+
 
 # Editor directories and files
 .vscode/*

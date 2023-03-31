@@ -1,15 +1,15 @@
 import React from 'react';
 
-function MagItemCard() {
-    const { name, type, desc, rarity, requires_attunement} = props.magicItems;
+function MagItemCard(props) {
+    const { name, type, desc, rarity, requires_attunement} = props.magItem;
 
     return (
-        <div className='card-display'>
-            <h1 className="card-header">{name}</h1>
-            <p className="card-text">Type: {type}</p>
-            <p className="card-text">Rarity: {rarity}</p>
-            <p className="card-text">Attunement: {(requires_attunement === "") ? 'None' : requires_attunement}</p>
-            <p className="card-text">Item Description: {desc}</p>
+        <div className='mag-card-display'>
+            <h1 className="mag-card-header">{name}</h1>
+            <p className="mag-card-text">Type: {type}</p>
+            <p className="mag-card-text">Rarity: {rarity}</p>
+            <p className="mag-card-text">Attunement: {(requires_attunement === "") ? 'No' : 'Yes'}</p>
+            <p className="mag-card-text">Item Description: {desc}</p>
         </div>
     )
 

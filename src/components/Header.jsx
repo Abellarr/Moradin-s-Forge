@@ -1,11 +1,11 @@
 import React from 'react';
 import Navbar from './Navbar';
 
-function Header() {
+function Header(props) {
 
     return (
         <div className="header">
-            <Navbar />
+            <Navbar display={props.display} setDisplay={props.setDisplay} />
             <h1 className="headerTitle">Moradin's Forge</h1>
         </div>
     )

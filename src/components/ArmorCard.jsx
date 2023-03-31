@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ArmorCard() {
+function ArmorCard(props) {
     const { name, category, cost, ac_string, strength_requirement, stealth_disadvantage} = props.armor;
 
     return (

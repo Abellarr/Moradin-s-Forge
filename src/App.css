@@ -44,19 +44,69 @@
 }
 
 .main-container {
-  height: 1000px;
+  display: flex;
+  justify-content: center;
+  height: 1100px;
   width: 100%;
   background-color: rgb(63, 53, 133);
+  padding-bottom: 100px;
 }
 
 .inner-container {
-  display: flex;
   justify-content: space-around;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 90%;
+  height: 100%;
+  margin-top: 20px;
+  background-color: rgb(99, 80, 202);
+  border: 3px solid white;
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+  color: white;
+  
+}
+
+.home-header {
+  font-family: Alkatra;
+  margin-top: 20px;
+  font-size: 4em;
+}
+
+.home-text {
+  font-family: Edu NSW ACT Foundation;
+  font-size: x-large;
 }
 
 .card-display {
-  width: 25%;
-  height: 30%;
+  display: inline-table;
+  text-align: center;
+  width: 250px;
+  height: 350px;
+  margin: 30px;
+  padding: 10px;
   background-color: darkslategray;
   color: white;
+  border: 3px solid white;
+  border-radius: 15%;
+}
+
+.card-header {
+  margin-bottom: 7px;
+}
+
+.card-text {
+  margin: 4px;
+}
+
+.mag-card-display {
+  display: inline-block;
+  text-align: center;
+  width: 80%;
+  padding: 10px;
+  margin: 20px 80px;
+  background-color: darkslategray;
+  color: white;
+  border: 3px solid white;
+  border-radius: 50px;
 }

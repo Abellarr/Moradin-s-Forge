@@ -1,17 +1,47 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/Header.jsx";
 import Container from "./components/Container.jsx";
 import './App.css'
 
 function App() {
-  let weaps = fetch('https://api.open5e.com/weapons/').then(response => response.json());
-  let arm = fetch('https://api.open5e.com/armor/').then(response => response.json());
-  let magItems = fetch('https://api.open5e.com/magicitems/').then(response => response.json());
-  const [display, setDisplay] = useState("");
-  const [weapons, setWeapons] = useState(weaps);
-  const [armor, setArmor] = useState(arm);
-  const [magicItems, setMagItems] = useState(magItems);
+  const [display, setDisplay] = useState("home");
+  const [customItems, setCustomItems] = useState([]);
+  const [weapons, setWeapons] = useState([]);
+  const [armor, setArmor] = useState([]);
+  const [magItems, setMagItems] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch('https://api.open5e.com/weapons/');
+      const weaps = await response.json();
+      setWeapons(weaps.results);
+      console.log(weaps.results);
+    })();
+    return () => {};
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch('https://api.open5e.com/armor/');
+      const arm = await response.json();
+      setArmor(arm.results);
+    })();
+    return () => {};
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch('https://api.open5e.com/magicitems/');
+      const mag = await response.json();
+      setMagItems(mag.results);
+    })();
+    return () => {};
+  }, []);
+    
+
+  
+  
 
   return (
     <div className="App">
@@ -21,12 +51,14 @@ function App() {
       />
       <Container 
         display={display}
+        customItems={customItems}
+        setCustomItems={setCustomItems}
         weapons={weapons}
         armor={armor}
-        magicItems={magicItems} 
+        magItems={magItems}
       />
     </div>
   )
 }
 
-export default App
+export default App;
