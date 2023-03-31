@@ -6,11 +6,13 @@ function ItemForm({ setCustomItems }) {
     let rarity = document.getElementById('rarity');
     let attunement = document.getElementById('attunement');
     let description = document.getElementById('description');
+    let id = document.getElementById('id');
 
     function handleClick() {
         fetch('http://localhost:5050/api/items', {method: 'GET'})
         .then(response => response.json())
         .then(data => setCustomItems(data));
+        clearValues();
     }
 
     function gatherValues() {
@@ -20,7 +22,24 @@ function ItemForm({ setCustomItems }) {
         allValues.rarity = rarity.value;
         allValues.attunement = (attunement.value === 'yes') ? true : false;
         allValues.description = description.value;
+        console.log(allValues);
         return allValues;
+    }
+
+    function idValue() {
+        let idValue = {};
+        idValue.id = parseInt(id.value);
+        console.log(idValue);
+        return idValue;
+    }
+
+    function clearValues() {
+        name.value = "";
+        type.value = "";
+        rarity.value = "";
+        attunement.value = "no";
+        description.value = "";
+        id.value = "";
     }
 
     function handlePost() {
@@ -28,22 +47,27 @@ function ItemForm({ setCustomItems }) {
         fetch('http://localhost:5050/api/items', 
         { 
             method: 'POST',
+            credentials: "same-origin",
             headers: {"Content-Type": 'application/json'},
-            body: sendData
+            body: JSON.stringify(sendData)
         })
         .then(response => response.json())
         .then(data => setCustomItems([data]));
+        clearValues();
     }
 
     function handleDelete() {
-        fetch('http://localhost:5050/api/items', 
+        let sendData = idValue();
+        fetch(`http://localhost:5050/api/items/${sendData.id}`, 
         { 
             method: 'DELETE',
+            credentials: "same-origin",
             headers: {"Content-Type": 'application/json'},
-            body: JSON.stringify(data)
+            body: JSON.stringify(sendData)
         })
         .then(response => response.json())
         .then(data => setCustomItems([data]));
+        clearValues();
     }
 
     return (
@@ -74,8 +98,8 @@ function ItemForm({ setCustomItems }) {
             <div>
                 <label className="form-input" htmlFor="attunement">Requires attunement?</label>
                 <select  name="attunement" id="attunement">
-                    <option value="yes">Yes</option>
                     <option value="no">No</option>
+                    <option value="yes">Yes</option>
                 </select>
             </div>
             <div className="form-input">
@@ -85,10 +109,25 @@ function ItemForm({ setCustomItems }) {
             <button
                 className='form-submit-button'
                 type="button"
+                onClick={handlePost}
             >
-                Submit
+                Submit Item
             </button>
             <hr />
+            <p className="form-input-text">
+                Which item do you want to delete?
+            </p>
+            <div className="form-input">
+                <label htmlFor="rarity">Item ID: </label>
+                <input className="input-box" type="text" name="type" id="id" required></input>
+            </div>
+            <button
+                className='form-submit-button'
+                type="button"
+                onClick={handleDelete}
+            >
+                Delete Item
+            </button>
         </div>
     )
 

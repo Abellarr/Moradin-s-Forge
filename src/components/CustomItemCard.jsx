@@ -2,7 +2,7 @@ import React from 'react';
 
 function CustomItemCard(props) {
     const {name, type, rarity, attunement, description, id} = props.item
-    console.log(name)
+    // console.log(name)
     return (
         <div className="item-container">
             <div className='custom-card-display'>
