@@ -46,7 +46,7 @@ app.post('/api/items', (req, res, next)=>{
     const { name, type, rarity, attunement, description } = req.body;
     console.log(req.body);
     // checks for missing information in request and if the hitPoints block is a number
-    if (!name || !type || !rarity || attunement !== typeof true || !description || attunement !== undefined) {
+    if (!name || !type || !rarity || !description) {
         console.log('Error: Input incorrect or missing information');
         return res.status(400).send('Error: Input incorrect or missing information');
     } else {

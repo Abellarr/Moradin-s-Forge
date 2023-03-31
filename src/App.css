@@ -2,21 +2,22 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 .header {
-  display: flexbox;
   height: 250px;
   background-image: url('./assets/Header Background 2.png');
   background-color: rgb(0,0,0,.2);
   background-blend-mode: multiply;
   background-size: cover;
   text-align: center;
-  padding-top: 1.5em;
+  padding-top: .5em;
   position: sticky;
 }
 
 .headerTitle {
+  margin-top: 0px;
   font-family: Alkatra;
   font-size: 150px;
   color: rgb(81, 47, 144);
@@ -109,4 +110,102 @@
   color: white;
   border: 3px solid white;
   border-radius: 50px;
+}
+
+.mag-card-display p {
+  font-size: larger;
+  margin: 5px;
+}
+
+.mag-card-display h1 {
+  font-size: 40px;
+}
+
+.custom-container {
+  display: flex;
+  justify-content: center;
+  height: 1100px;
+  width: 100%;
+  background-color: rgb(63, 53, 133);
+  padding-bottom: 100px;
+}
+
+.custom-card-display {
+  display: inline-block;
+  text-align: center;
+  width: 80%;
+  padding: 10px;
+  margin: 20px 80px;
+  background-color: darkslategray;
+  color: white;
+  border: 3px solid white;
+  border-radius: 50px;
+}
+
+.custom-card-display p {
+  font-size: larger;
+  margin: 5px;
+}
+
+.custom-card-display h1 {
+  font-size: 40px;
+}
+
+.custom-form {
+  display: inline;
+  width: 80%;
+  height: 75%;
+  padding: 10px;
+  margin: 20px 20px 20px 50px;
+  background-color: darkslategray;
+  color: white;
+  border: 3px solid white;
+  border-radius: 25px;
+}
+
+.form-input {
+  font-family: Edu NSW ACT Foundation;
+  text-shadow: 2px 1px 1px rgb(0,0,0);
+  margin: 10px 0px;
+}
+
+.form-input-text {
+  font-family: Edu NSW ACT Foundation;
+  text-shadow: 2px 2px 2px rgb(0,0,0);
+  font-size: 25px;
+  margin: 10px;
+}
+
+.custom-button {
+  margin: 20px 25px;
+  width: 80%;
+  height:50px;
+  font-family: Alkatra;
+  font-size: 25px;
+  text-shadow: 2px 2px 2px rgb(0,0,0);
+  background-color: darkcyan;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-submit-button {
+  margin: 10px 25px 20px 25px;
+  width: 80%;
+  height:50px;
+  font-family: Alkatra;
+  font-size: 25px;
+  text-shadow: 2px 2px 2px rgb(0,0,0);
+  background-color: darkcyan;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-box {
+  
+}
+
+#description textarea {
+  resize: none;
 }

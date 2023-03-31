@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/Header.jsx";
 import Container from "./components/Container.jsx";
-import './App.css'
+import CustomContainer from "./components/CustomContainer.jsx";
+import './App.css';
 
 function App() {
   const [display, setDisplay] = useState("home");
@@ -26,7 +26,8 @@ function App() {
       const response = await fetch('https://api.open5e.com/armor/');
       const arm = await response.json();
       setArmor(arm.results);
-    })();
+    })
+    ();
     return () => {};
   }, []);
 
@@ -38,7 +39,16 @@ function App() {
     })();
     return () => {};
   }, []);
-    
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch('http://localhost:5050/api/items');
+      const custom = await response.json();
+      setCustomItems(custom);
+    })();
+    return () => {};
+  }, [])
+  
 
   
   
@@ -49,14 +59,20 @@ function App() {
         display={display}
         setDisplay={setDisplay}
       />
-      <Container 
-        display={display}
-        customItems={customItems}
-        setCustomItems={setCustomItems}
-        weapons={weapons}
-        armor={armor}
-        magItems={magItems}
-      />
+      {(display === "itemCreator") ?
+        <CustomContainer
+          display={display}
+          customItems={customItems}
+          setCustomItems={setCustomItems}
+          /> :
+        <Container 
+          display={display}
+          weapons={weapons}
+          armor={armor}
+          magItems={magItems}
+        />
+        
+        }
     </div>
   )
 }
