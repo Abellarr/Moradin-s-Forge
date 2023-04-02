@@ -90,6 +90,7 @@
   color: white;
   border: 3px solid white;
   border-radius: 15%;
+  box-shadow: 6px 6px 15px 0px rgba(0,0,0,0.6);
 }
 
 .card-header {
@@ -113,6 +114,7 @@
   color: white;
   border: 3px solid white;
   border-radius: 50px;
+  box-shadow: 6px 6px 15px 0px rgba(0,0,0,0.6);
 }
 
 .mag-card-display p {
@@ -159,6 +161,7 @@
   color: white;
   border: 3px solid white;
   border-radius: 50px;
+  box-shadow: 6px 6px 15px 0px rgba(0,0,0,0.6);
 }
 
 .custom-card-header {
@@ -173,6 +176,7 @@
 
 .custom-card-display h1 {
   font-size: 40px;
+  text-shadow: 2px 2px 3px black;
 }
 
 .custom-form {
@@ -214,6 +218,19 @@
 }
 
 .form-submit-button {
+  margin: 15px 20px;
+  width: 40%;
+  height: 50px;
+  font-family: Alkatra;
+  font-size: 25px;
+  text-shadow: 2px 2px 2px rgb(0,0,0);
+  background-color: darkcyan;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#deleteButton{
   margin: 10px 25px 20px 40px;
   width: 80%;
   height:50px;
@@ -230,6 +247,14 @@
   width: 60%;
   border-radius: 5px;
   float: right;
+}
+
+#idInput {
+  margin-left: 15px;
+}
+
+#id2 {
+  width: 25%;
 }
 
 #attunement {

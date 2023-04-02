@@ -62,6 +62,44 @@ app.post('/api/items', (req, res, next)=>{
     } 
 })
 
+// PATCH request: Takes in request body and modifies an entry in the npc_char table (/chars/:charid/)
+app.patch('/api/items/:id/', (req,res, next)=>{
+    console.log(req.method);
+    const itemId = parseInt(req.params.id);
+    // Checks to see if (/:id) is a valid number
+    if (Number.isNaN(itemId)){
+        console.log('Error Invalid Path Name')
+        return res.status(404).send('Error Invalid Path Name')
+    }
+    // Checks if the character exists in the table
+    pool.query('SELECT * FROM customitems WHERE id = $1;', [itemId], (err, result)=>{
+        let info = result.rows[0];
+        if (err){
+            next(err);
+        }
+        if (!info) {
+            // Returns not found if (/:id/) doesn't match up
+            console.log('Error: Item Not Found');
+            return res.status(404).send('Error: Item Not Found');            
+        }
+        for (let key in info) {
+            if (info[key] !== req.body[key] && req.body[key] !== undefined) {
+                info[key] = req.body[key];
+            }
+        }
+        const { name, type, rarity, attunement, description } = info;
+        pool.query('UPDATE customitems SET name = $1, type = $2, rarity = $3, attunement = $4, description = $5 WHERE id = $6 RETURNING *;',
+        [name, type, rarity, attunement, description, itemId], (err, result)=>{
+            let updatedItem = result.rows[0]
+            if (err){
+                next(err);
+            }
+            console.log('Updated Item: ', updatedItem)
+            return res.status(200).send(updatedItem);            
+        })
+    });  
+})
+
 // DELETE request: Deletes a character (/:charid/) from the database and responds to client with deleted info
 app.delete('/api/items/:id/', (req,res, next)=>{
     console.log(req.method);
