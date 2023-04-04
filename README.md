@@ -3,10 +3,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-# Title
-React Fullstack MVP
+# React Fullstack MVP
 
----
+![Dwarf working on a blade at a forge] (./src/assets/Header Background.png)
 
 ## Description
 This project is a fullstack single-page web app built with React, Node, Express and Postgres, which displays item information (weapons, armor, and magic items) from Dungeons and Dragons 5e and allows for custom magic item creation.
