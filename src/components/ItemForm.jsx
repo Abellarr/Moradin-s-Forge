@@ -33,7 +33,7 @@ function ItemForm({ setCustomItems }) {
         patchVals.type = type.value || undefined;
         patchVals.rarity = rarity.value || undefined;
         patchVals.attunement = (attunement.value === 'yes') ? true : false;
-        patchVals.description = name.value || undefined;
+        patchVals.description = description.value || undefined;
         patchVals.id = id2.value;
         console.log(patchVals);
         return patchVals;
@@ -66,7 +66,7 @@ function ItemForm({ setCustomItems }) {
             body: JSON.stringify(sendData)
         })
         .then(response => response.json())
-        .then(data => setCustomItems([data]));
+        .then(data => setCustomItems([data]))
         clearValues();
     }
 
