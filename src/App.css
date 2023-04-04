@@ -54,9 +54,8 @@
 }
 
 .inner-container {
-  justify-content: space-around;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: overlay;
   width: 90%;
   height: 100%;
   margin-top: 20px;
@@ -65,18 +64,47 @@
   border-top-left-radius: 10%;
   border-bottom-left-radius: 10%;
   color: white;
-  
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  height: 100%;
+  margin-top: 20px;
+  background-color: rgb(99, 80, 202);
+  border: 3px solid white;
+  border-radius: 10%;
+  color: white;
+}
+
+.home-display {
+  float: auto;
 }
 
 .home-header {
   font-family: Alkatra;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgb(0,0,0);
   margin-top: 20px;
   font-size: 4em;
 }
 
+.home-image {
+  margin-left: 22%;
+  width: 55%;
+  border-radius: 25px;
+  border: 1px solid white;
+  opacity: .8;
+  box-shadow: 6px 6px 15px 0px rgba(0,0,0,0.6);
+}
+
 .home-text {
+  margin-top: 10px;
   font-family: Edu NSW ACT Foundation;
   font-size: x-large;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgb(0,0,0);
 }
 
 .card-display {
@@ -100,7 +128,7 @@
 }
 
 .card-text {
-  margin: 4px;
+  margin: 15px 4px;
   text-shadow: 2px 1px 1px rgb(0,0,0);
 }
 
@@ -167,6 +195,10 @@
 .custom-card-header {
   font-family: Alkatra;
   font-size: 40px;
+}
+
+.custom-card-text {
+  text-shadow: 2px 1px 1px rgb(0,0,0);
 }
 
 .custom-card-display p {

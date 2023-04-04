@@ -9,7 +9,7 @@ function Container({ display, weapons, armor, magItems }) {
 
     return (
         <div className='main-container'>
-            <div className='inner-container'>
+            <div className={(display==='home') ? 'home-container' : 'inner-container'}>
                 {(display === 'home') ? <HomeCard /> : null}
                 {(display === 'weapons') ? weapons.map((weapon, index) => <WeaponCard key= {'w'+index} weapon={weapon} />) : null}
                 {(display === 'armor') ? armor.map((armor, index) => <ArmorCard key= {'a'+index} armor={armor} />) : null}
