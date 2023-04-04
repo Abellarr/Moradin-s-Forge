@@ -10,6 +10,8 @@
 ## Description
 This project is a fullstack single-page web app built with React, Node, Express and Postgres, which displays item information (weapons, armor, and magic items) from Dungeons and Dragons 5e and allows for custom magic item creation.
 
+![Project Home Page](./src/assets/Home-page.png)
+
 ---
 
 ## Table of Contents
@@ -33,6 +35,8 @@ Once the database is setup, type "nodemon /Server/expressServer.js" in the comma
 
 ## Usage
 This app is useful for Dungeon Masters or players who want an easy to use format to search for items to use in D&D 5e campaigns. There is also an Item Creator module that allows users to view, create, modify, and delete custom magical items from the database, allowing DMs and players access to a valuable resource to grow the fun and originality of their campaigns, both official and homebrew.
+
+![Custom Item Creation](./src/assets/Item-Creator-page.png)
 
 ---
 
